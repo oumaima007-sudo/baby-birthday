@@ -90,84 +90,7 @@ body {
   transition: width 0.05s linear;
 }
 
-/* ── MUSIC POPUP ── */
-#music-popup {
-  position: fixed; inset: 0; z-index: 8888;
-  background: rgba(5,10,24,0.9);
-  backdrop-filter: blur(12px);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.5s;
-}
-#music-popup.show { opacity: 1; visibility: visible; }
-.music-popup-card {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  padding: 40px 32px;
-  text-align: center;
-  max-width: 340px;
-  width: 90%;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 60px rgba(212,175,55,0.15);
-  animation: card-in 0.5s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes card-in { from{transform:scale(.7) translateY(40px);opacity:0} to{transform:scale(1);opacity:1} }
-.music-popup-card .emoji { font-size: 2.5rem; margin-bottom: 12px; }
-.music-popup-card h3 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem; color: var(--gold-light);
-  margin-bottom: 24px;
-}
-.popup-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.popup-btns button {
-  padding: 12px 28px; border-radius: 50px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem; font-weight: 600;
-  cursor: pointer; border: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-yes {
-  background: linear-gradient(135deg, var(--gold-dim), var(--gold-light));
-  color: var(--navy);
-  box-shadow: 0 4px 20px rgba(212,175,55,0.4);
-}
-.btn-no {
-  background: var(--glass);
-  color: var(--white);
-  border: 1px solid var(--glass-border) !important;
-}
-.popup-btns button:hover { transform: scale(1.06); }
 
-/* ── MUSIC PLAYER ── */
-#music-player {
-  position: fixed; bottom: 20px; right: 20px; z-index: 7777;
-  background: rgba(8,15,37,0.85);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  border-radius: 60px;
-  padding: 10px 18px;
-  display: flex; align-items: center; gap: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.1);
-  opacity: 0; visibility: hidden;
-  transform: translateY(20px);
-  transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
-}
-#music-player.show { opacity: 1; visibility: visible; transform: translateY(0); }
-.music-icon {
-  font-size: 1.2rem;
-  animation: none;
-}
-.music-icon.playing { animation: spin-eq 1s linear infinite alternate; }
-@keyframes spin-eq { 0%{transform:scaleY(1)} 100%{transform:scaleY(1.4)} }
-.music-controls { display: flex; gap: 8px; }
-.music-controls button {
-  background: none; border: none;
-  color: var(--gold-light); font-size: 1.1rem;
-  cursor: pointer; padding: 4px;
-  transition: transform 0.2s, color 0.2s;
-}
-.music-controls button:hover { transform: scale(1.2); color: var(--white); }
 
 /* ── HERO ── */
 #hero {
@@ -639,6 +562,82 @@ section { position: relative; z-index: 1; }
 }
 .overlay-popup-card button:hover { transform: scale(1.05); }
 
+/* ── MUSIC POPUP ── */
+#music-popup {
+  position: fixed; inset: 0; z-index: 8888;
+  background: rgba(5,10,24,0.9);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.5s;
+}
+#music-popup.show { opacity: 1; visibility: visible; }
+.music-popup-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 340px;
+  width: 90%;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(212,175,55,0.15);
+  animation: card-in 0.5s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes card-in { from{transform:scale(.7) translateY(40px);opacity:0} to{transform:scale(1);opacity:1} }
+.music-popup-card .emoji { font-size: 2.5rem; margin-bottom: 12px; }
+.music-popup-card h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem; color: var(--gold-light);
+  margin-bottom: 24px;
+}
+.popup-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.popup-btns button {
+  padding: 12px 28px; border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  cursor: pointer; border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-yes {
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold-light));
+  color: var(--navy);
+  box-shadow: 0 4px 20px rgba(212,175,55,0.4);
+}
+.btn-no {
+  background: var(--glass);
+  color: var(--white);
+  border: 1px solid var(--glass-border) !important;
+}
+.popup-btns button:hover { transform: scale(1.06); }
+
+/* ── MUSIC PLAYER ── */
+#music-player {
+  position: fixed; bottom: 20px; right: 20px; z-index: 7777;
+  background: rgba(8,15,37,0.85);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  border-radius: 60px;
+  padding: 10px 18px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.1);
+  opacity: 0; visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+}
+#music-player.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.music-icon { font-size: 1.2rem; }
+.music-icon.playing { animation: spin-eq 1s linear infinite alternate; }
+@keyframes spin-eq { 0%{transform:scaleY(1)} 100%{transform:scaleY(1.4)} }
+.music-controls { display: flex; gap: 8px; }
+.music-controls button {
+  background: none; border: none;
+  color: var(--gold-light); font-size: 1.1rem;
+  cursor: pointer; padding: 4px;
+  transition: transform 0.2s, color 0.2s;
+}
+.music-controls button:hover { transform: scale(1.2); color: var(--white); }
+
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -668,7 +667,7 @@ section { position: relative; z-index: 1; }
 <div id="music-popup">
   <div class="music-popup-card">
     <div class="emoji">🎂</div>
-    <h3>Bghiti tsm3 birthday song ?</h3>
+    <h3>Bghiti tsm3 birthday song ? 🎵</h3>
     <div class="popup-btns">
       <button class="btn-yes" onclick="startMusic()">Oui 🎵</button>
       <button class="btn-no" onclick="closeMusicPopup()">La hhh</button>
@@ -684,9 +683,7 @@ section { position: relative; z-index: 1; }
     <button onclick="toggleMute()" id="mute-btn" title="Mute">🔊</button>
   </div>
 </div>
-<audio id="audio" loop src="assets/birthday-song.mp3"></audio>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="floating-hearts-hero" id="hero-hearts"></div>
@@ -931,14 +928,64 @@ const loadInterval = setInterval(() => {
   bar.style.width = prog + '%';
 }, 80);
 
-// ── MUSIC ──
-const audio = document.getElementById('audio');
+// ── MUSIC (Web Audio API - Happy Birthday melody) ──
+let audioCtx = null;
 let isPlaying = false;
+let isMuted = false;
+let gainNode = null;
+let stopRequested = false;
+let loopTimeout = null;
+
+// Happy Birthday notes: [frequency, duration_beats]
+const HBD_NOTES = [
+  [264,0.75],[264,0.25],[297,1],[264,1],[352,1],[330,2],
+  [264,0.75],[264,0.25],[297,1],[264,1],[396,1],[352,2],
+  [264,0.75],[264,0.25],[528,1],[440,1],[352,1],[330,1],[297,2],
+  [466,0.75],[466,0.25],[440,1],[352,1],[396,1],[352,2]
+];
+
+function playMelody() {
+  if (stopRequested) return;
+  if (!audioCtx) return;
+  const bpm = 160;
+  const beat = 60 / bpm;
+  let t = audioCtx.currentTime + 0.05;
+
+  HBD_NOTES.forEach(([freq, dur]) => {
+    const osc = audioCtx.createOscillator();
+    const env = audioCtx.createGain();
+    osc.connect(env);
+    env.connect(gainNode);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, t);
+    env.gain.setValueAtTime(0, t);
+    env.gain.linearRampToValueAtTime(0.45, t + 0.02);
+    env.gain.setValueAtTime(0.45, t + dur * beat - 0.05);
+    env.gain.linearRampToValueAtTime(0, t + dur * beat);
+    osc.start(t);
+    osc.stop(t + dur * beat);
+    t += dur * beat;
+  });
+
+  const totalDur = HBD_NOTES.reduce((s,[,d]) => s + d, 0) * beat * 1000 + 200;
+  loopTimeout = setTimeout(() => { if (!stopRequested) playMelody(); }, totalDur);
+}
+
+function initAudio() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    gainNode = audioCtx.createGain();
+    gainNode.gain.setValueAtTime(0.7, audioCtx.currentTime);
+    gainNode.connect(audioCtx.destination);
+  }
+}
 
 function startMusic() {
   closeMusicPopup();
-  audio.play().catch(() => {});
+  initAudio();
+  stopRequested = false;
   isPlaying = true;
+  playMelody();
   document.getElementById('music-player').classList.add('show');
   document.getElementById('play-btn').textContent = '⏸';
   document.getElementById('music-icon').classList.add('playing');
@@ -949,26 +996,31 @@ function closeMusicPopup() {
 }
 function togglePlay() {
   if (isPlaying) {
-    audio.pause(); isPlaying = false;
+    stopRequested = true;
+    clearTimeout(loopTimeout);
+    isPlaying = false;
     document.getElementById('play-btn').textContent = '▶';
     document.getElementById('music-icon').classList.remove('playing');
   } else {
-    audio.play().catch(()=>{}); isPlaying = true;
+    initAudio();
+    stopRequested = false;
+    isPlaying = true;
+    playMelody();
     document.getElementById('play-btn').textContent = '⏸';
     document.getElementById('music-icon').classList.add('playing');
   }
 }
 function toggleMute() {
-  audio.muted = !audio.muted;
-  document.getElementById('mute-btn').textContent = audio.muted ? '🔇' : '🔊';
+  if (!gainNode) return;
+  isMuted = !isMuted;
+  gainNode.gain.setValueAtTime(isMuted ? 0 : 0.7, audioCtx.currentTime);
+  document.getElementById('mute-btn').textContent = isMuted ? '🔇' : '🔊';
 }
-
-// ── SCROLL ──
 function smoothScrollTo(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── SCROLL REVEAL ──
+// ── SCROLL ──
 const reveals = document.querySelectorAll('.reveal');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
